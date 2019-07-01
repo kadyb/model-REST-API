@@ -1,6 +1,6 @@
 library("jsonlite")
 
-model = readRDS("deploy/model_LDA.rds")
+model = readRDS("model-REST-API-master/model_LDA.rds")
 
 new.data = data.frame(
    Sepal.Length = c(5, 5.9, 6.5),
