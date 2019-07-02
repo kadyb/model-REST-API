@@ -10,20 +10,17 @@ model = readRDS("model_LDA.rds")
 #* @post /predict.class
 
 predict.class = function(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width) {
-
+   
    new.data = list(Sepal.Length = as.numeric(Sepal.Length),
                    Sepal.Width = as.numeric(Sepal.Width),
                    Petal.Length = as.numeric(Petal.Length),
                    Petal.Width = as.numeric(Petal.Width)
                    )
    
-   if(is.null(new.data)) return(print("No data submitted"))
-   
-   if(anyNA(new.data)) return(print("Data can't contain NA"))
-   
-   if(any(new.data < 0 | new.data == 0)) return(print("Values must be greater than 0"))
-   
+   if(is.null(new.data)) return("No data submitted")
+   if(anyNA(new.data)) return("Data can't contain NA")
+   if(any(new.data < 0 | new.data == 0)) return("Values must be greater than 0")
+
    output = predict(model, new.data)
    return(output)
-   
 }
