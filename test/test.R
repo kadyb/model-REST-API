@@ -16,4 +16,4 @@ all(output == c("setosa", "versicolor", "virginica"))
 set.seed(1)
 index = sample(1:nrow(model$trainingData), size = 20)
 test = model$trainingData[index, 2:5]
-write.csv(test, "request.csv")
+write.csv(test, "request.csv", row.names = FALSE)
