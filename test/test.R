@@ -1,5 +1,3 @@
-library("jsonlite")
-
 model = readRDS("model-REST-API-master/model_LDA.rds")
 
 new.data = data.frame(
@@ -18,5 +16,4 @@ all(output == c("setosa", "versicolor", "virginica"))
 set.seed(1)
 index = sample(1:nrow(model$trainingData), size = 20)
 test = model$trainingData[index, 2:5]
-test = toJSON(test)
-write_json(test, "request.json")
+write.csv(test, "request.csv")
