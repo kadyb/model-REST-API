@@ -2,27 +2,17 @@ import time
 import json
 import requests
 
-def request(path, service):
 """
 The function sends a request to the REST API to classify irises species.
 It is required to provide a csv file with data service address.
 The object classes are returned as a result.
 """
+def request(path, service):
     with open(path) as csvFile:
         lines = csvFile.readlines()[1:]
     csvFile.close()
-    
-    SepalLength = []
-    SepalWidth = []
-    PetalLength = []
-    PetalWidth = []
-    
-    for line in lines:
-        data = line.split(',')
-        SepalLength.append(data[0])
-        SepalWidth.append(data[1])
-        PetalLength.append(data[2])
-        PetalWidth.append(data[3])
+    lines = [line[:-1].split(',') for line in lines]
+    SepalLength, SepalWidth, PetalLength, PetalWidth = zip(*lines)
     
     output = []
     startTime = time.time()
@@ -39,8 +29,8 @@ The object classes are returned as a result.
         )
         output.append(response.json())
     
-    predTime = str(round(time.time() - startTime))
-    print(str(len(lines)) + " objects predicted in " + predTime + " s")
+    print("{} objects predicted in {} s".format(
+            len(lines),
+            round(time.time() - startTime)
+    ))
     return(output)
-
-print(request("model-REST-API-master/test/request.csv", "http://localhost:5762/predict.class"))
