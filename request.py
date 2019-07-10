@@ -4,7 +4,7 @@ import requests
 
 """
 The function sends a request to the REST API to classify irises species.
-It is required to provide a csv file with data service address.
+It is required to provide a csv file with data and service address.
 The object classes are returned as a result.
 """
 def request(path, service):
