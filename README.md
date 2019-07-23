@@ -1,6 +1,7 @@
 ## REST API for Iris flowers's classification model
 
 To start the REST API service on a local host, run the `run.R` file. Four input attributes for classification are required, i.e. `Sepal.Length`, `Sepal.Width`, `Petal.Length`, `Petal.Width`. Input values must be greater than 0 and passed as a string. The type of iris is returned as json in response to the request.
+
 The service supports logging information about incoming requests.
 
 ### Example
