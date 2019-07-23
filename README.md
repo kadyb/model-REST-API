@@ -16,5 +16,5 @@ print(request("test/request.csv", "http://localhost:5762/predict.class"))
 
 ___
 ### TODO:
-* Move conditions such as column type, range of values and required attributes from predict code to REST API
+* Move conditions such as column type and required attributes from predict code to REST API
 * Return 400 Client Error in case of an error
