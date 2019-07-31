@@ -14,7 +14,7 @@ print(request("test/request.csv", "http://localhost:5762/predict.class"))
 #>  [['versicolor'], ['setosa'], ['setosa'], ['setosa'], ['virginica'], ['versicolor'], ['setosa'], ['virginica'], ['versicolor'], ['versicolor'], ['virginica'], ['virginica'], ['setosa'], ['virginica'], ['versicolor'], ['versicolor'], ['setosa'], ['versicolor'], ['versicolor'], ['virginica']]
 ```
 
-It is also possible to use a simple `curl` request from Terminal.
+It is also possible to use a single `curl` request from Terminal:
 
 ```bash
 curl --data "Sepal.Length=6&Sepal.Width=2.5&Petal.Length=4&Petal.Width=1" "localhost:5762/predict.class"
