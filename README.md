@@ -21,8 +21,3 @@ curl --data "Sepal.Length=6&Sepal.Width=2.5&Petal.Length=4&Petal.Width=1" "local
 
 #> ["versicolor"]
 ```
-
-___
-### TODO:
-* Move conditions such as column type and required attributes from predict code to REST API
-* Return 400 Client Error in case of an error
